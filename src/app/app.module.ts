@@ -9,19 +9,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicStorageModule } from '@ionic/storage';
 
-import { ConferenceApp } from './app.component';
+import { WorldCupApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { TablePage } from '../pages/table/table';
 import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
-import { MapPage } from '../pages/map/map';
-import { SchedulePage } from '../pages/schedule/schedule';
+import { GroupPage } from '../pages/group/group';
 import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
 import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
-import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
-import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { MatchDetailPage } from '../pages/match-detail/match-detail';
+import { MatchesPage } from '../pages/matches/matches';
 import { TabsPage } from '../pages/tabs-page/tabs-page';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { SupportPage } from '../pages/support/support';
@@ -32,18 +31,17 @@ import { UserData } from '../providers/user-data';
 
 @NgModule({
   declarations: [
-    ConferenceApp,
-    AboutPage,
+    WorldCupApp,
+    TablePage,
     AccountPage,
     LoginPage,
-    MapPage,
     PopoverPage,
-    SchedulePage,
+    GroupPage,
     ScheduleFilterPage,
     SessionDetailPage,
     SignupPage,
-    SpeakerDetailPage,
-    SpeakerListPage,
+    MatchDetailPage,
+    MatchesPage,
     TabsPage,
     TutorialPage,
     SupportPage
@@ -51,49 +49,48 @@ import { UserData } from '../providers/user-data';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(ConferenceApp, {}, {
+    IonicModule.forRoot(WorldCupApp, {}, {
       links: [
-        { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
-        { component: SchedulePage, name: 'Schedule', segment: 'schedule' },
-        { component: SessionDetailPage, name: 'SessionDetail', segment: 'sessionDetail/:sessionId' },
-        { component: ScheduleFilterPage, name: 'ScheduleFilter', segment: 'scheduleFilter' },
-        { component: SpeakerListPage, name: 'SpeakerList', segment: 'speakerList' },
-        { component: SpeakerDetailPage, name: 'SpeakerDetail', segment: 'speakerDetail/:speakerId' },
-        { component: MapPage, name: 'Map', segment: 'map' },
-        { component: AboutPage, name: 'About', segment: 'about' },
-        { component: TutorialPage, name: 'Tutorial', segment: 'tutorial' },
-        { component: SupportPage, name: 'SupportPage', segment: 'support' },
-        { component: LoginPage, name: 'LoginPage', segment: 'login' },
-        { component: AccountPage, name: 'AccountPage', segment: 'account' },
-        { component: SignupPage, name: 'SignupPage', segment: 'signup' }
+        {component: TabsPage, name: 'TabsPage', segment: 'tabs-page'},
+        {component: GroupPage, name: 'Group', segment: 'group'},
+        {component: SessionDetailPage, name: 'SessionDetail', segment: 'sessionDetail/:sessionId'},
+        {component: ScheduleFilterPage, name: 'ScheduleFilter', segment: 'scheduleFilter'},
+        {component: MatchesPage, name: 'Matches', segment: 'matches'},
+        {component: MatchDetailPage, name: 'MatchDetail', segment: 'matchDetail/:matchId'},
+        {component: TablePage, name: 'Table', segment: 'table'},
+        {component: TutorialPage, name: 'Tutorial', segment: 'tutorial'},
+        {component: SupportPage, name: 'SupportPage', segment: 'support'},
+        {component: LoginPage, name: 'LoginPage', segment: 'login'},
+        {component: AccountPage, name: 'AccountPage', segment: 'account'},
+        {component: SignupPage, name: 'SignupPage', segment: 'signup'}
       ]
     }),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    ConferenceApp,
-    AboutPage,
+    WorldCupApp,
+    TablePage,
     AccountPage,
     LoginPage,
-    MapPage,
     PopoverPage,
-    SchedulePage,
+    GroupPage,
     ScheduleFilterPage,
     SessionDetailPage,
     SignupPage,
-    SpeakerDetailPage,
-    SpeakerListPage,
+    MatchDetailPage,
+    MatchesPage,
     TabsPage,
     TutorialPage,
     SupportPage
   ],
   providers: [
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConferenceData,
     UserData,
     InAppBrowser,
     SplashScreen
   ]
 })
-export class AppModule { }
+export class AppModule {
+}

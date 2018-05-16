@@ -4,10 +4,10 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ConferenceData } from '../../providers/conference-data';
 
 @Component({
-  selector: 'page-speaker-detail',
-  templateUrl: 'speaker-detail.html'
+  selector: 'page-match-detail',
+  templateUrl: 'match-detail.html'
 })
-export class SpeakerDetailPage {
+export class MatchDetailPage {
   speaker: any;
 
   constructor(public dataProvider: ConferenceData, public navCtrl: NavController, public navParams: NavParams) {

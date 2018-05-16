@@ -12,7 +12,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ConferenceData } from '../../providers/conference-data';
 
 import { SessionDetailPage } from '../session-detail/session-detail';
-import { SpeakerDetailPage } from '../speaker-detail/speaker-detail';
+import { MatchDetailPage } from '../match-detail/match-detail';
 
 // TODO remove
 export interface ActionSheetButton {
@@ -24,10 +24,10 @@ export interface ActionSheetButton {
 };
 
 @Component({
-  selector: 'page-speaker-list',
-  templateUrl: 'speaker-list.html'
+  selector: 'matches',
+  templateUrl: 'matches.html'
 })
-export class SpeakerListPage {
+export class MatchesPage {
   actionSheet: ActionSheet;
   speakers: any[] = [];
 
@@ -50,7 +50,7 @@ export class SpeakerListPage {
   }
 
   goToSpeakerDetail(speaker: any) {
-    this.navCtrl.push(SpeakerDetailPage, { speakerId: speaker.id });
+    this.navCtrl.push(MatchDetailPage, { matchId: speaker.id });
   }
 
   goToSpeakerTwitter(speaker: any) {
