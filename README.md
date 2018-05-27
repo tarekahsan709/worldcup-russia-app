@@ -1,4 +1,4 @@
-# Ionic Conference Application
+# Football World Cup 2018 Russia  Application
 
 This is the official Ionic demo app, showcasing a variety of Ionic Framework components and native features.
 
